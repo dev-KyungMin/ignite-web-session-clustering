@@ -1,0 +1,126 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>kr.co.metagraph.web-session-clustering</groupId>
+  <artifactId>web-session-clustering</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <name>Apache Ignite Quick Start Guide Web Session Clustering</name>
+  
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    
+    <!-- GridGain 프로퍼티스 주입 -->
+    <gridgain.version>8.8.29</gridgain.version>
+  </properties>
+  
+  <!-- 외부 Repository에서 GridGain 의존성 갖고오기 -->
+  <repositories>
+	  <repository>
+        <id>GridGain External Repository</id>
+        <url>http://www.gridgainsystems.com/nexus/content/repositories/external</url>
+    </repository>
+  </repositories>
+  
+  <dependencies>
+	<!-- GridGain 의존성 주입 -->
+  	<dependency>
+      <groupId>org.gridgain</groupId>
+      <artifactId>ignite-core</artifactId>
+      <version> ${gridgain.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.gridgain</groupId>
+      <artifactId>ignite-web</artifactId>
+      <version> ${gridgain.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.gridgain</groupId>
+      <artifactId>ignite-log4j</artifactId>
+      <version>${gridgain.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.gridgain</groupId>
+      <artifactId>ignite-spring</artifactId>
+      <version>${gridgain.version}</version>
+    </dependency>
+    
+    <!-- commons-math3 의존성 주입 -->
+    <dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-math3</artifactId>
+		<version>3.6.1</version>
+	</dependency>
+	
+	<!-- google guava 의존성 주입 -->
+	<dependency>
+		<groupId>com.google.guava</groupId>
+		<artifactId>guava</artifactId>
+		<version>21.0</version>
+	</dependency>
+	
+	<!-- junit 의존성 주입 -->
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.13.2</version>
+	</dependency>
+	
+	<!-- spring-webmvc 의존성 주입 -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>4.3.2.RELEASE</version>
+	</dependency>
+	
+	<!-- javax.servlet-api 의존성 주입 -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>4.0.1</version>
+	</dependency>
+	
+	<!-- javax.servlet.jsp-api 의존성 주입 -->
+	<dependency>
+		<groupId>javax.servlet.jsp</groupId>
+		<artifactId>javax.servlet.jsp-api</artifactId>
+		<version>2.3.3</version>
+	</dependency>
+	
+	<!-- jstl 의존성 주입 -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	</dependency>
+	
+	<!-- h2 의존성 주입 -->
+	<dependency>
+		<groupId>com.h2database</groupId>
+		<artifactId>h2</artifactId>
+		<version>2.1.214</version>
+	</dependency>
+		
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>1.8</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.3</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
